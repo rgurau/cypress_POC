@@ -1,5 +1,5 @@
-export let MODAL_ANNOUNCE = '#modalAnnounce > .modal-dialog > .modal-content > .modal-header > .close > span > img'
-export let MODAL_ANNOUNCE_OK = '.btn-yellow'
+let MODAL_ANNOUNCE = '#modalAnnounce > .modal-dialog > .modal-content > .modal-header > .close > span > img'
+let MODAL_ANNOUNCE_OK = '.btn-yellow'
 
  function closeBanner(){
     cy.get(MODAL_ANNOUNCE)

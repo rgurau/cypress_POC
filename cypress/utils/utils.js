@@ -1,6 +1,3 @@
-
-
-
 function validateUrlIncludes(sURL) {
     cy.url().should('include',sURL)
 }
@@ -13,8 +10,6 @@ function typeValue(element, value){
 function clickOn(element){
     cy.get(element).click({force:true})
 }
-
-
 
 
 exports.validateUrlIncludes = validateUrlIncludes
