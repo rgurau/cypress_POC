@@ -1,5 +1,5 @@
 # cypress_POC
-# to add cypress run
+# add cypress:
 install cypress --save-dev
-#start Cypress with:
+# start Cypress:
 npx cypress open
