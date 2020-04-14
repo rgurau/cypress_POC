@@ -1,4 +1,5 @@
 import { typeValue, clickOn } from '../../utils/utils'
+import { closeBanner } from '../../utils/Pages/popUp'
 
 let SIGN_IN_USER = '.link-user',
 EMAIL = ':nth-child(3) > input',
@@ -9,6 +10,7 @@ LOG_IN = '.login-box-sign-in-btn'
 
 function logIn(){
     clickOn(SIGN_IN_USER)
+    closeBanner()
     typeValue(EMAIL, EMAIL_VALUE)
     typeValue(PASSWORD, PASSWORD_VALUE)
     clickOn(LOG_IN)

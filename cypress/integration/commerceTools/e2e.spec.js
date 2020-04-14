@@ -8,7 +8,7 @@ describe('Sunrise', () => {
     })
 
     it('e2e', () => {
-        cy.visit('https://demo.commercetools.com/en/home')
+        cy.visit('/en/home')
         closeBanner()
         validateUrlIncludes('home')
         logIn()
@@ -28,12 +28,21 @@ describe('Sunrise', () => {
         cy.get('#input-streetNameShipping').clear().type('42, Quessberry Road')
         cy.get('#input-cityShipping').clear().type('Gatwick')
         cy.get('#input-postalCodeShipping').clear().type('RH60NP')
-        cy.scrollTo('bottom')
+
+        cy.get('.checkout-product-name').eq(0).invoke('text').should('equal','Top "Forever and Always“')
+        cy.get('.checkout-product-name').eq(1).invoke('text').should('equal','Slip-On Shoes ”H259” Hogan white')
+        cy.get('.checkout-product-name').eq(2).invoke('text').should('equal','Perfume ”Haiku” Mirko Buffini 30ml')
+
+        
+
         cy.get('#input-emailShipping').clear().type('mockuser@gmail.com')
         cy.get('#shipping-continue-checkout-btn-xs').click()
         cy.get('#shipping-method-0').click()
         cy.get('#shipping-continue-checkout-btn-xs').click()
         cy.get('#payment-type-prepaid').check()
         cy.get('#shipping-continue-checkout-btn-xs').click()
+
+        cy.scrollTo('bottom')
+        cy.get('.order-total').invoke('text').should('equal','TotalEUR 378.25')
     }) 
 })
