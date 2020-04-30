@@ -13,11 +13,13 @@ function logIn(){
     closeBanner()
     typeValue(EMAIL, EMAIL_VALUE)
     typeValue(PASSWORD, PASSWORD_VALUE)
+    cy.screenshot('login page','fullPage')
+    cy.pause()
     clickOn(LOG_IN)
 }
 
 // cy.get('.link-user').click({force:true})
-// cy.get(':nth-child(3) > input').clear().type('gurauroxana@gmail.com')
+// cy.get(':nth-child(3) > input').clear().type('mockuser@gmail.com')
 // cy.get(':nth-child(4) > input').clear().type('SunPassword')
 // cy.get('.login-box-sign-in-btn').click()
 

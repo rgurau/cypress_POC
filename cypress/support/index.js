@@ -17,3 +17,9 @@
 import './commands'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+Cypress.Screenshot.defaults({
+    capture: 'fullPage'
+  })
+
+  //, viewport, runner
