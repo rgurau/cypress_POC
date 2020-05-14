@@ -25,9 +25,9 @@ describe('Sunrise', () => {
         // })
 
         // it('Should fill the login form and sign in', () => {
-            cy.get(':nth-child(3) > input').clear().type('mockuser@gmail.com')
+            cy.get(':nth-child(3) > input').clear().type('mockuser@gmail.com', { delay: 100 })
                 .should('have.value', 'mockuser@gmail.com')
-            cy.get(':nth-child(4) > input').clear().type('SunPassword')
+            cy.get(':nth-child(4) > input').clear().type('SunPassword', { delay: 200 })
             .should('have.value', 'SunPassword')
             cy.get('.login-box-sign-in-btn').click()
         // })
@@ -41,10 +41,10 @@ describe('Sunrise', () => {
         cy.get('.nav-minicart > .btn-yellow').click()
 
             // fill delivery details
-            cy.get('#shipping-title-selectSelectBoxItArrowContainer').then(option =>{
+            cy.get('#shipping-title-selectSelectBoxItArrowContainer').then( option => {
                 cy.wrap(option)
                 option[0].click()
-                cy.get('[data-val="Mr."]').click({multiple:true, force:true})
+                cy.get('[data-val="Mr."]').click({ multiple:true, force:true })
             })
             cy.get('#input-firstNameShipping').clear().type('Mock')
             cy.get('#input-lastNameShipping').clear().type('User')
@@ -57,7 +57,6 @@ describe('Sunrise', () => {
             cy.get('.checkout-product-name').eq(2).invoke('text').should('equal','Perfume ”Haiku” Mirko Buffini 30ml')
     
             
-    
             cy.get('#input-emailShipping').clear().type('mockuser@gmail.com')
             cy.get('#shipping-continue-checkout-btn-xs').click()
             cy.get('#shipping-method-0').click()
